@@ -48,3 +48,4 @@ exports.avg = function avg (array) {
     console.log("avg value is "+res);
     return res;
 }
+}
