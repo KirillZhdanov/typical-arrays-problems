@@ -1,16 +1,19 @@
 
 exports.min = function min (array) {
- let sum=0,res;
+let minValue=Number.MAX_VALUE,res;
     if(array!=undefined){
-      for (let i = 0; i < arguments.length; i++) {
-      sum+= arguments[i];
+    for (let i = 0; i < arguments.length; i++) {
+      if(minValue>arguments[i])
+      minValue=arguments[i]
     }
-    
     for (let i = 0; i < array.length; i++) {
-      sum+= array[i];
-    }}
-    res=sum/arguments.length;
-    console.log("avg value is "+res);
+      if(minValue>array[i])
+      minValue=array[i]
+    }
+  } res=0;
+    res+=minValue;
+    res=Math.round(res)==Math.round(Number.MAX_VALUE)?0:res;
+    console.log("min value is "+res);
     return res;
 }
 
@@ -34,20 +37,14 @@ exports.max = function max (array) {
 }
 
 exports.avg = function avg (array) {
- function min(array) {
-    let minValue=Number.MAX_VALUE,res;
-    if(array!=undefined){
-    for (let i = 0; i < arguments.length; i++) {
-      if(minValue>arguments[i])
-      minValue=arguments[i]
-    }
+ let sum=0,res;
+    if(array!==undefined && array.length!==0){
+        
     for (let i = 0; i < array.length; i++) {
-      if(minValue>array[i])
-      minValue=array[i]
+      sum+= array[i];
     }
-  } res=0;
-    res+=minValue;
-    res=Math.round(res)==Math.round(Number.MAX_VALUE)?0:res;
-    console.log("min value is "+res);
+      res=0;
+    res=sum/array.length;
+    console.log("avg value is "+res);
     return res;
 }
