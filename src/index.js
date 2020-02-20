@@ -45,7 +45,7 @@ exports.avg = function avg (array) {
     }
       res=0;
     res=sum/array.length;
-    console.log("avg value is "+res);
+    console.log("avg value is "+res);}
     return res;
-}
+
 }
